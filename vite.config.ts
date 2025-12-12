@@ -14,7 +14,7 @@ export default defineConfig({
       includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
         name: 'Евро Сметка',
-        short_name: '€ Сметка',
+        short_name: 'Евро Сметка',
         description: 'Калкулатор за смятане на ресто в евро',
         theme_color: '#ffffff',
         background_color: '#ffffff',
