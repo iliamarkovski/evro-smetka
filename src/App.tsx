@@ -21,6 +21,7 @@ const App = () => {
   };
 
   const showBGN = new Date() < CUTOFF_DATE;
+  console.log('showBGN: ', showBGN);
 
   return (
     <div className="bg-background flex min-h-dvh items-center justify-center p-4">
@@ -28,12 +29,13 @@ const App = () => {
         {/* Inputs */}
         <div className="space-y-4">
           <div className="flex flex-col gap-2">
-            <Label>Цялата сума в евро</Label>
+            <Label htmlFor="full-price">Цена за плащане в евро</Label>
             <InputGroup>
               <InputGroupAddon>
                 <InputGroupText>€</InputGroupText>
               </InputGroupAddon>
               <InputGroupInput
+                id="full-price"
                 type="tel"
                 value={fullPrice}
                 onChange={(e) => {
@@ -48,14 +50,15 @@ const App = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-2">
-              <Label>
-                Плащане в <span>евро</span>
+              <Label htmlFor="paid-euro">
+                Платена в <span>евро</span>
               </Label>
               <InputGroup>
                 <InputGroupAddon>
                   <InputGroupText>€</InputGroupText>
                 </InputGroupAddon>
                 <InputGroupInput
+                  id="paid-euro"
                   type="tel"
                   value={paidEuro}
                   onChange={(e) => setPaidEuro(handleNumberInput(e.target.value))}
@@ -67,11 +70,12 @@ const App = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <Label>
-                Плащане в <span>лева</span>
+              <Label htmlFor="paid-bgn">
+                Платена в <span>лева</span>
               </Label>
               <InputGroup>
                 <InputGroupInput
+                  id="paid-bgn"
                   type="tel"
                   value={paidBGN}
                   onChange={(e) => setPaidBGN(handleNumberInput(e.target.value))}
@@ -131,12 +135,12 @@ const App = () => {
           </p>
 
           <p>
-            <strong>Плащане в лева: </strong>
+            <strong>Платена в лева: </strong>
             {paidBGN ? `${Number(paidBGN).toFixed(2)} ${BGN_SIGN}` : '-'}
           </p>
 
           <p>
-            <strong>Плащане в евро: </strong>
+            <strong>Платена в евро: </strong>
             {paidEuro ? `${EURO_SIGN}${Number(paidEuro).toFixed(2)}` : '-'}
           </p>
 
@@ -161,7 +165,7 @@ const App = () => {
             )}
           </p>
           <p>
-            <strong>Платено: </strong> {change !== null ? (change >= 0 ? '✅' : '❌') : '-'}
+            <strong>Сметката е платена: </strong> {change !== null ? (change >= 0 ? '✅' : '❌') : '-'}
           </p>
         </div>
         <div className="flex justify-end">
