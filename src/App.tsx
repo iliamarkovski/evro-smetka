@@ -21,7 +21,6 @@ const App = () => {
   };
 
   const showBGN = new Date() < CUTOFF_DATE;
-  console.log('showBGN: ', showBGN);
 
   return (
     <div className="bg-background flex min-h-dvh items-center justify-center p-4">
