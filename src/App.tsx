@@ -109,10 +109,10 @@ const App = () => {
           </p>
 
           {/* Remaining amount */}
-          <p className={cn({ 'text-primary': change !== null && change < 0 })}>
+          <p className={cn({ 'text-primary': change !== null && Number(change.toFixed(2)) < 0 })}>
             <strong>Остава за плащане: </strong>
             {change !== null ? (
-              change < 0 ? (
+              Number(change.toFixed(2)) < 0 ? (
                 <>
                   {EURO_SIGN}
                   {Math.abs(change).toFixed(2)}
@@ -145,9 +145,9 @@ const App = () => {
           </p>
 
           {/* Change */}
-          <p className={cn({ 'text-primary': change !== null && change > 0 })}>
+          <p className={cn({ 'text-primary': change !== null && Number(change.toFixed(2)) > 0 })}>
             <strong>Ресто: </strong>
-            {change !== null && change >= 0 ? (
+            {change !== null && Number(change.toFixed(2)) >= 0 ? (
               <>
                 {EURO_SIGN}
                 {change.toFixed(2)}
@@ -164,7 +164,8 @@ const App = () => {
           </p>
 
           <p>
-            <strong>Сметката е платена: </strong> {change !== null ? (change >= 0 ? '✅' : '❌') : '-'}
+            <strong>Сметката е платена: </strong>{' '}
+            {change !== null ? (Number(change.toFixed(2)) >= 0 ? '✅' : '❌') : '-'}
           </p>
         </div>
 
