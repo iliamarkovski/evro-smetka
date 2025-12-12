@@ -108,6 +108,7 @@ const App = () => {
             )}
           </p>
 
+          {/* Remaining amount */}
           <p className={cn({ 'text-primary': change !== null && change < 0 })}>
             <strong>Остава за плащане: </strong>
             {change !== null ? (
@@ -143,10 +144,8 @@ const App = () => {
             {paidEuro ? `${EURO_SIGN}${Number(paidEuro).toFixed(2)}` : '-'}
           </p>
 
-          <p
-            className={cn({
-              'text-primary': change !== null && change > 0,
-            })}>
+          {/* Change */}
+          <p className={cn({ 'text-primary': change !== null && change > 0 })}>
             <strong>Ресто: </strong>
             {change !== null && change >= 0 ? (
               <>
@@ -163,10 +162,12 @@ const App = () => {
               '-'
             )}
           </p>
+
           <p>
             <strong>Сметката е платена: </strong> {change !== null ? (change >= 0 ? '✅' : '❌') : '-'}
           </p>
         </div>
+
         <div className="flex justify-end">
           <Button type="button" onClick={handleReset} disabled={!fullPrice && !paidEuro && !paidBGN}>
             Изчисти
