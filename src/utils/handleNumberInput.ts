@@ -2,6 +2,11 @@ export const handleNumberInput = (value: string) => {
   // Replace comma with dot
   let sanitized = value.replace(',', '.');
 
+  // If the first character is a dot, prefix with "0"
+  if (sanitized.startsWith('.')) {
+    sanitized = '0' + sanitized;
+  }
+
   // Remove all invalid characters except digits and dot
   sanitized = sanitized.replace(/[^0-9.]/g, '');
 
