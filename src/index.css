@@ -182,8 +182,7 @@
   }
 
   html {
-    @apply text-[18px] sm:text-xl;
-    font-family: var(--font-sans);
+    @apply overscroll-none text-[18px] sm:text-xl;
   }
   body {
     @apply bg-background text-foreground;
