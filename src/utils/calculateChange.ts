@@ -15,5 +15,5 @@ export const calculateChange = ({
   const totalPaidInEuro = paidInEuro + paidInBGNConvertedToEuro;
   const changeInEuro = totalPaidInEuro - fullPrice;
 
-  return Number(changeInEuro.toFixed(2));
+  return changeInEuro;
 };
