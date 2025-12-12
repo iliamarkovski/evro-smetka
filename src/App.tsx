@@ -111,7 +111,7 @@ const App = () => {
               change < 0 ? (
                 <>
                   {EURO_SIGN}
-                  {Math.abs(change)}
+                  {Math.abs(change).toFixed(2)}
                   {showBGN && (
                     <span className="opacity-">
                       {' '}
@@ -140,12 +140,15 @@ const App = () => {
             {paidEuro ? `${EURO_SIGN}${Number(paidEuro).toFixed(2)}` : '-'}
           </p>
 
-          <p className={cn({ 'text-primary': change !== null && change > 0 })}>
+          <p
+            className={cn({
+              'text-primary': change !== null && change > 0,
+            })}>
             <strong>Ресто: </strong>
             {change !== null && change >= 0 ? (
               <>
                 {EURO_SIGN}
-                {change}
+                {change.toFixed(2)}
                 {showBGN && (
                   <span className="opacity-">
                     {' '}
@@ -156,6 +159,9 @@ const App = () => {
             ) : (
               '-'
             )}
+          </p>
+          <p>
+            <strong>Платено: </strong> {change !== null ? (change >= 0 ? '✅' : '❌') : '-'}
           </p>
         </div>
         <div className="flex justify-end">
