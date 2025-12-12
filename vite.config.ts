@@ -13,9 +13,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Currency Calculator',
-        short_name: 'Calc',
-        description: 'A simple euro/BGN calculator',
+        name: 'Евро Сметка',
+        short_name: '€ Сметка',
+        description: 'Калкулатор за смятане на ресто в евро',
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
