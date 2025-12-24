@@ -23,7 +23,7 @@ const App = () => {
   const showBGN = new Date() < CUTOFF_DATE;
 
   return (
-    <div className="bg-background flex min-h-dvh items-start justify-center p-4 sm:items-center">
+    <div className="bg-background flex min-h-dvh items-start justify-center p-4">
       <div className="bg-card w-full max-w-lg space-y-6 rounded-2xl border px-4 py-6 shadow-md sm:px-6">
         {/* Inputs */}
         <div className="space-y-4">
