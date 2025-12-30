@@ -100,7 +100,7 @@ const App = () => {
                 {Number(fullPrice).toFixed(2)}{' '}
                 <span className="opacity-">
                   / {(Number(fullPrice) * EURO_TO_BGN_RATE).toFixed(2)}
-                  {BGN_SIGN}
+                 {' '}{BGN_SIGN}
                 </span>
               </>
             ) : (
@@ -120,7 +120,7 @@ const App = () => {
                     <span className="opacity-">
                       {' '}
                       / {(Math.abs(change) * EURO_TO_BGN_RATE).toFixed(2)}
-                      {BGN_SIGN}
+                    {' '}{BGN_SIGN}
                     </span>
                   )}
                 </>
