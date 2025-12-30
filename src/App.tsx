@@ -164,7 +164,7 @@ const App = () => {
           </p>
 
           <p>
-            <strong>Сметката е платена: </strong>{' '}
+            <strong>Сумата е достигната: </strong>{' '}
             {change !== null ? (Number(change.toFixed(2)) >= 0 ? '✅' : '❌') : '-'}
           </p>
         </div>
